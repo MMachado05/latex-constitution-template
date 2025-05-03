@@ -1,0 +1,181 @@
+%% template.tex
+%% Copyright 2025 Marcial Alfonso Machado Mora
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+%   https://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Marcial Alfonso Machado Mora
+%
+% This work consists of the file template.tex
+
+\documentclass[12pt,letterpaper]{article}
+
+% Packages
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{transparent}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage{hanging}
+\usepackage{xfrac}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{tocloft}
+\usepackage{bookmark}
+
+% Color for headings and accents
+\definecolor{accent}{RGB}{117,0,0}
+
+% Custom heading formats
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\Roman{subsection}}
+\renewcommand{\thesubsubsection}{\Roman{subsubsection}}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{accent}}
+  {ARTICLE \thesection.}{0.5em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {SECTION \thesubsection.}{0.5em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}
+  {CHAPTER \thesubsubsection.}{0.5em}{}
+  \setlist{noitemsep}
+
+% Header and footer
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[L]{\slshape Constitution}
+\fancyhead[R]{
+  \transparent{1}{\slshape [ORGANIZATION NAME]}
+  \transparent{0.7}{\includegraphics[height=10pt,width=10pt]{logo.png}}
+}
+\fancyfoot[C]{\thepage}
+
+% Right-align Roman numerals in TOC
+\renewcommand{\cftsecpresnum}{\hfill}
+\renewcommand{\cftsecaftersnum}{\quad}
+\setlength{\cftsecnumwidth}{3.5em} % Change these as roman numerals grow
+
+% For subsections
+\renewcommand{\cftsubsecpresnum}{\hfill}
+\renewcommand{\cftsubsecaftersnum}{\quad}
+\setlength{\cftsecnumwidth}{3em}
+
+% For subsections
+\renewcommand{\cftsubsubsecpresnum}{\hfill}
+\renewcommand{\cftsubsubsecaftersnum}{\quad}
+\setlength{\cftsecnumwidth}{3em}
+
+% Document content starts here
+\begin{document}
+
+% Change bullet style
+\renewcommand{\labelitemi}{\textcolor{accent}{\ding{68}}}
+\renewcommand{\labelitemii}{\textcolor{accent}{\ding{67}}}
+\renewcommand{\labelitemiii}{\textcolor{accent}{\ding{66}}}
+
+\renewcommand{\labelenumi}{\textcolor{accent}{\alph*.}}
+
+% Title page
+\begin{titlepage}
+\begin{center}
+\vspace*{1cm}
+
+% Logo
+\includegraphics[width=0.4\textwidth]{logo.png}\\[2cm]
+
+% Title
+{\LARGE\bfseries\color{accent} CONSTITUTION\\[0.5cm]}
+{\huge\bfseries\color{accent} \underline{[ORGANIZATION NAME]}\\[1cm]}
+
+% Subtitle
+{\large Last Revised: [Month Day, Year]}\\[3cm]
+
+% Bottom of title page
+\vfill
+{\large [University Name]}\\
+{\large [City, State]}\\[1cm]
+\end{center}
+\end{titlepage}
+
+% Table of contents
+\tableofcontents
+\clearpage
+
+% Document proper starts here
+\section*{PREAMBLE}
+\addcontentsline{toc}{section}{PREAMBLE}
+
+\begin{hangparas}{0.5in}{1}
+  This is where the preamble goes!
+\end{hangparas}
+
+\section{Definition}
+
+\subsection{Name}
+Here, you establish the name of your organization.
+
+\subsection{Purpose}
+Here, you establish the purpose of your organization.
+
+You may find it useful to use bullet lists, such as these:
+\begin{itemize}
+  \item Level one.
+    \begin{itemize}
+      \item Level two.
+        \begin{itemize}
+          \item Level three.
+          \item Level three.
+        \end{itemize}
+      \item Level two.
+    \end{itemize}
+  \item Level one.
+\end{itemize}
+
+Or single-level ordered lists, such as this:
+
+\begin{enumerate}
+  \item Bing.
+  \item Bang.
+  \item Bong.
+\end{enumerate}
+
+\section{Other Section}
+This is the general structure of all sections.
+
+\subsection{A Subsection}
+Here, we have a \textit{section} section. Like, it's called that.
+
+\subsubsection{The Lowest-Level Subsection}
+You can have chapters if you'd like!
+
+% % Signature section
+% \clearpage
+% \section*{RATIFICATION}
+% \addcontentsline{toc}{section}{RATIFICATION}
+%
+% We, the undersigned, hereby ratify this Constitution on behalf of [ORGANIZATION NAME].
+%
+% \vspace{1cm}
+% \begin{tabular}{p{3in}p{3in}}
+% \rule{3in}{0.5pt} & \rule{3in}{0.5pt} \\
+% President & Faculty Advisor \\
+% & \\
+% \rule{3in}{0.5pt} & \rule{3in}{0.5pt} \\
+% Vice President & Date of Ratification \\
+% \end{tabular}
+
+\end{document}
